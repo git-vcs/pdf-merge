@@ -1,3 +1,8 @@
 *.tex
 *.pdf
 test/
+*.aux
+*.log
+*.out
+*.toc
+*.gz

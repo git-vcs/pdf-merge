@@ -4,4 +4,6 @@ echo -e '\n\\end{document}' >> /tmp/latex
 cp baseLatexFile /tmp/merged.tex
 cat /tmp/latex >> /tmp/merged.tex 
 mv /tmp/merged.tex .
+pdflatex -synctex=1 -interaction=nonstopmode "merged".tex
+pdflatex -synctex=1 -interaction=nonstopmode "merged".tex
 
