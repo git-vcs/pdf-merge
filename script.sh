@@ -5,7 +5,7 @@ awk_script='
 {
     print "\n\\hyperlink{page.1}{Click here to go to table of contents}"
     print "\n\\section{"$0"}"
-    print "\n\\includepdf[pages=-, landscape=false, angle=0]{"$0"}"
+    print "\n\\includepdf[pages=-, landscape=false, angle=0]{\""$0"\".pdf}"
 };
 END {
     print "\n\\end{document}"
@@ -15,7 +15,9 @@ END {
 cp base.tex /tmp/merged.tex
 find . -type f \( -iname "*.pdf" ! -iname "merged.pdf" \) \
     | cut -c 3- \
-    | awk "$awk_script" >> /tmp/merged.tex
+    | rev |cut -c 5-| rev \
+    | awk "$awk_script" >> /tmp/merged.tex 
+
 mv /tmp/merged.tex .
 
 # Render PDF
