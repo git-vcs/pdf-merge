@@ -7,4 +7,4 @@ The scripts recursively finds all PDF starting from the current working director
 2. open a terminal in the same location
 3. run the script
 
-[example file](https://github.com/git-vcs/pdf-merge/blob/master/exsample-pdf.pdf)
+[example file](example.pdf)
